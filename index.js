@@ -104,16 +104,20 @@ function updateCartTotal() {
     var cartItemContainer = document.getElementsByClassName('cart-items')[0]
     var cartRows = cartItemContainer.getElementsByClassName('cart-row')
     var total = 0
+    var qty=cartRows.length
     for (var i = 0; i < cartRows.length; i++) {
         var cartRow = cartRows[i]
+        qty=qty+1
         var priceElement = cartRow.getElementsByClassName('cart-price')[0]
         var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
         var price = parseFloat(priceElement.innerText.replace('$', ''))
         var quantity = quantityElement.value
         total = total + (price * quantity)
     }
+    
     total = Math.round(total * 100) / 100
     document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
+    document.getElementsByClassName('qty')[0].innerText=qty/2
 }
 cartBtn.addEventListener("click",function(){
     cartItem.classList.toggle("active");

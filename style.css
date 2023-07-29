@@ -96,7 +96,7 @@ html::-webkit-scrollbar-thumb{
 .header .cart-container{
     position:absolute;
     top:95%;
-    width:35rem;
+    width:45rem;
     height:calc(100vh - 9rem);
     background-color: #fff;
     box-shadow: 0px 20px 14px 0px rgb(0 0 0 /75%);
@@ -297,6 +297,7 @@ html::-webkit-scrollbar-thumb{
     font-size:2.5rem;
     margin-left: 2rem;
     background-color: transparent;
+    position: relative;
 }
 .home{
     min-height: 100vh;
@@ -681,6 +682,12 @@ a{
     .products .box-container .box .box-head .name{
         font-size:3.4rem;
     }
+    .header .cart-container{
+        right:-200%;
+    }
+    .header .cart-container.active{
+        right:-4rem;
+    }
 }
 @media(max-width:768px){
     .header #menu-btn{
@@ -717,3 +724,17 @@ a{
     }
  
 }
+
+.qty {
+    position: absolute;
+    right: -15px;
+    top: -10px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 10px;
+    color: #FFF;
+    background-color: #D10024;
+  }
